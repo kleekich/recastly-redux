@@ -3,12 +3,10 @@ import currentVideoReducer from './currentVideo.js';
 import videoListReducer from './videoList.js';
 
 
-function rootReducer(state = {videoList: []}, action) {
-  return {
-    currentVideoReducer: currentVideoReducer(state.currentVideoReducer, action),
-    videoListReducer: videoListReducer(state.videoListReducer, action)    
-  }
-}
+const rootReducer = combineReducers({
+  currentVideo: currentVideoReducer,
+  videoList: videoListReducer
+});
 
 //TODO: define the root reducer for this app
 
